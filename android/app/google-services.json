@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "1035200090567",
+    "project_id": "ev-station-134ba",
+    "storage_bucket": "ev-station-134ba.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1035200090567:android:2909ece41af2a9de4f49e2",
+        "android_client_info": {
+          "package_name": "com.iu.evstation.ev_station"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1035200090567-hkrjc882abuf7denb4rml4lg6busdsi1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDdnfvSaL13JUtcHF4nn2dsv2OYKrho7bA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1035200090567-hkrjc882abuf7denb4rml4lg6busdsi1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

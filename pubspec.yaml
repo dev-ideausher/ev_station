@@ -1,0 +1,50 @@
+name: ev_station
+version: 1.0.0+1
+publish_to: none
+description: A new Flutter project.
+environment: 
+  sdk: '>=2.19.2 <3.0.0'
+
+dependencies: 
+  cupertino_icons: ^1.0.2
+  get: ^4.6.5
+  flutter: 
+    sdk: flutter
+  get_storage: ^2.1.1
+  dio: ^5.1.1
+  google_fonts: ^4.0.3
+  flutter_svg: ^2.0.4
+  encrypt: ^5.0.1
+  tuple: ^2.0.1
+  crypto: ^3.0.2
+  cached_network_image: ^3.2.3
+  firebase_auth: ^4.1.1
+  stacked_firebase_auth: ^2.19.2
+  firebase_core: ^2.1.1
+  flutter_otp_text_field: ^1.1.1
+  flutter_rating_bar: ^4.0.1
+  percent_indicator: ^4.2.3
+  flutter_facebook_auth: ^5.0.11  
+  geolocator: ^9.0.2
+
+dev_dependencies: 
+  flutter_lints: 2.0.1
+  flutter_test: 
+    sdk: flutter
+
+flutter: 
+  uses-material-design: true
+  assets: 
+    - assets/
+    - assets/images/
+  fonts:
+    - family: General Sans
+      fonts:
+        - asset : assets/fonts/GeneralSans-Light.otf
+          weight : 300
+        - asset : assets/fonts/GeneralSans-Regular.otf
+          weight : 400
+        - asset : assets/fonts/GeneralSans-Medium.otf
+          weight : 500
+        - asset : assets/fonts/GeneralSans-Semibold.otf
+          weight : 600

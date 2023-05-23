@@ -1,0 +1,229 @@
+{
+  "onboarding": {
+    "we_got_you": "We got you covered with our ",
+    "fastest_services": "fastest services",
+    "get_our_service": "Get our service and amazing offers & emergency service and support for 24/7",
+    "join_as_a_user": "Join as a user",
+    "join_as_a_lister": "Join as a lister",
+
+    "login": "Login",
+    "sign_in": "Sign in",
+    "logout": "Logout",
+    "sign_in_fb": "Sign-in with Facebook",
+    "sign_in_google": "Sign-in with Google",
+    "sign_in_apple": "Sign-in with Apple"
+  },
+
+  "otp_verification": {
+    "otp_verification": "OTP Verification",
+    "otp_has_been": "OTP has been shared to your registered mobile number",
+    "enter_otp": "Enter OTP",
+    "didnt_received": "Didn’t received OTP? ",
+    "send_again": "Send Again",
+    "scontinue": "Continue"
+  },
+
+  "social_login": {
+    "welcome_back": "Welcome Back",
+    "login_with_your": "Login with your data you entered during registration",
+    "email_phone_number": "Email/Phone Number",
+    "password": "Password",
+    "forgot_password": "Forgot Password?",
+    "new_here": "New Here? ",
+    "sign_up": "Sign up",
+    "or_login_with": "or login with",
+    "please_enter_email": "Please enter email or phone number",
+    "please_enter_a_proper_number": "Please enter a proper number",
+    "please_enter_proper_email": "Please enter proper email",
+    "please_enter_a_password": "Please Enter a password"
+
+  },
+
+  "create_account": {
+    "already_have_an": "Already have an account? ",
+    "or_signup_with": "or signup with",
+    "create_account": "Create Account",
+    "by_clicking": "By clicking, you agree to our ",
+    "terms_and_conditions": "Terms and Conditions",
+    "privacy_policy": "Privacy policy",
+    "name": "Name",
+    "give_us_some": "Give us some information to create a new account",
+    "create_new_account": "Create new account",
+    "please_enter_a_proper_name": "Please enter a proper name",
+    "please_agree_the": "Please agree the terms and conditions"
+  },
+  "renter_navigation": {
+    "home": "Home",
+    "cars": "Cars",
+    "trip": "Trip",
+    "profile": "Profile"
+  },
+  "home": {
+    "choose_ev": "Choose EV Charger near you",
+    "search_for_a": "Search for a charger point",
+    "near_me": "Near me",
+    "look_out_on": "Look out on map",
+    "turn_on_your_location": "Turn on your Location",
+    "please_turn_on": "Please turn on your location in order to find the nearest charging station.",
+    "enable_location": "Enable Location"
+  },
+  "search": {
+    "filter": "Filter",
+    "brand": "Brand",
+    "charger_type": "Charger Type",
+    "available_chargers_only": "Available Chargers Only",
+    "free_chargers_only": "Free Chargers Only",
+    "price_low_to_high": "Price: low to high",
+    "price_high_to_low": "Price: high to low",
+    "discount": "Discount",
+    "connector_type": "Connector Type"
+  },
+  "searched": {
+    "open": "Open",
+    "available_connectors": "Available Connectors"
+  },
+  "station_detail": {
+    "book_a_slot": "Book a Slot",
+    "connectors": "Connectors",
+    "overview": "Overview",
+    "amenities": "Amenities",
+    "cafeteria": "Cafeteria",
+    "market": "Market",
+    "Hospital": "Hospital",
+    "Church": "Church",
+    "reviews": "Reviews",
+    "see_more": "See More",
+    "add_a_comment": "Add a comment",
+    "available_connectors": "Available Connectors - ",
+    "start_a_new_session": "Start a new session",
+    "capacity": "Capacity: ",
+    "connectors_in_use": "Connectors in use - ",
+    "remove_alert": "Remove Alert",
+    "close": "Close",
+    "set_alert": "Set Alert",
+    "alert_has_been": "Alert has been removed",
+    "go_back_to": "Go back to add the alert again.",
+    "you_will_be": "You will be notified when the station gets online. To set alert toggle the alert button below"
+  },
+
+  "add_a_comment": {
+    "add_a_comment": "Add a comment",
+    "rate_your_experience": "Rate your experience",
+    "write_your_review": "Write your review"
+  },
+
+  "cars": {
+    "my_car": "My Car",
+    "add_a_new_car": "Add a new Car",
+    "upload_image": "Upload Image",
+    "car_name": "Car Name",
+    "chassis_number": "Chassis Number",
+    "charger_type": "Charger Type",
+    "charger_capacity": "Charger Capacity",
+    "current_type": "Current Type"
+  },
+
+  "trip": {
+    "your_location": "Your Location",
+    "enter_destination": "Enter Destination",
+    "start_navigation": "Start Navigation",
+    "add_another_stop": "Add another stop",
+    "share_directions": "Share Directions",
+    "add_route": "Add route to your home screen",
+    "exit_navigation": "Exit Navigation",
+    "with_this_percentage": "With this percentage of charge you can complete the round trip without even charging again."
+  },
+
+  "book_slot": {
+    "book_a_slot": "Book a slot",
+    "fill_all_the": "Fill all the details to book your slot",
+    "select_your_vehicle": "Select your vehicle type",
+    "two_wheeler": "Two Wheeler",
+    "four_wheeler": "Four Wheeler",
+    "select_your_model": "Select your model type",
+    "select_your_vehicle_fuel": "Select your vehicle fuel",
+    "select_connecter_type": "Select connecter type",
+    "select_date_for": "Select date for your slot",
+    "select_time_for": "Select time for your slot",
+    "confirm_slot": "Confirm Slot",
+    "inclusive_of_all_taxes": "inclusive of all taxes",
+    "vehicle": "Vehicle",
+    "battery": "Battery",
+    "slot_time": "Slot Time",
+    "slot_date": "Slot Date",
+    "connection_type": "Connection Type",
+    "booking_number": "Booking Number",
+    "charge_time": "Charge time",
+    "charge_point_id": "Charge Point ID",
+    "coupons": "Coupons",
+    "apply_coupons": "Apply Coupons",
+    "terms_and_condition": "Terms and condition"
+  },
+
+  "make_payment": {
+    "make_payment": "Make payment",
+    "card_number": "Card Number",
+    "card_holder_name": "Card Holder Name",
+    "expiry_date": "Expiry Date",
+    "cvv_number": "CVV Number",
+    "save_this_information": "Save this information for future use",
+    "additional_note": "Additional Note",
+    "month": "Month",
+    "year": "Year"
+  },
+  "payment_successful": {
+    "payment_successful": "Payment Successful",
+    "click_on_continue": "Click on continue and you’ll be redirected to the booking screen"
+  },
+
+  "my_profile": {
+    "my_profile": "My Profile",
+    "profile_details": "Profile Details",
+    "my_bookings": "My Bookings",
+    "my_subscription": "My Subscription",
+    "log_out": "Log Out"
+  },
+
+  "profile_detail": {
+    "full_name": "Full Name",
+    "email": "Email",
+    "number": "Number",
+    "edit_details": "Edit Details"
+  },
+  "my_bookings": {
+    "Ongoing": "Ongoing",
+    "booked": "Booked",
+    "history": "History",
+    "date": "Date:",
+    "time": "Time:",
+    "rebook_slot": "Rebook Slot"
+  },
+
+  "my_subscription": {
+    "monthly": "Monthly",
+    "yearly": "Yearly",
+    "star_membership": "Star Membership",
+    "free_unlimited_in": "Free unlimited in app charge sessions",
+    "share_your_charge": "Share your charge point for free & earn 1% sales pool",
+    "optimized_media_centre": "Optimized media centre with Op-In-Out Controls",
+    "earn_50_of": "Earn 50% of GGC Commission E.V car sales HUB",
+    "earn_5_on": "Earn 5% on all affiliate in APP purchases/sales",
+    "subscribe_now": "Subscribe Now",
+    "congratulations": "Congratulations",
+    "youre_subscription_is": "You’re subscription is active for the next one month enjoy the exciting features",
+    "plan": "Plan",
+    "next_billing_date": "Next Billing Date"
+  },
+
+  "common": {
+    "search": "Search",
+    "submit": "Submit",
+    "cancel": "Cancel",
+    "confirm": "Confirm",
+    "apply": "Apply",
+    "available": "Available",
+    "address": "Address",
+    "phone": "Phone",
+    "something_went_wrong": "Something went wrong, please try again"
+  }
+}
