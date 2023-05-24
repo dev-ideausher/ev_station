@@ -1,8 +1,8 @@
 import 'package:ev_station/app/services/dio/api_service.dart';
+import 'package:ev_station/app/services/storage.dart';
 import 'package:ev_station/generated/locales.g.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-
 import '../../../routes/app_pages.dart';
 import '../../../services/auth.dart';
 import '../../../services/snackbar.dart';
@@ -72,7 +72,19 @@ class SocialLoginController extends GetxController {
     await APIManager.postLoginAPI().then((value) {
       print(value.data);
       value.data['status']
-          ? Get.offAllNamed(Routes.RENTER_NAVIGATION)
+          ? {
+              Get.find<GetStorageService>().setuserId =
+                  value.data['user']['_id'],
+              Get.find<GetStorageService>().setName =
+                  value.data['user']['name'],
+              Get.find<GetStorageService>().setPhone =
+                  value.data['user']['phone'],
+              Get.find<GetStorageService>().setEmail =
+                  value.data['user']['email'],
+              Get.find<GetStorageService>().setProfileUrl =
+                  value.data['user']['image'],
+              Get.offAllNamed(Routes.RENTER_NAVIGATION)
+            }
           : showMySnackbar(msg: LocaleKeys.common_something_went_wrong.tr);
     });
   }

@@ -117,10 +117,18 @@
     "add_a_new_car": "Add a new Car",
     "upload_image": "Upload Image",
     "car_name": "Car Name",
+    "model_name": "Model Name",
     "chassis_number": "Chassis Number",
     "charger_type": "Charger Type",
     "charger_capacity": "Charger Capacity",
-    "current_type": "Current Type"
+    "current_type": "Current Type",
+    "enter_car_name": "Enter car name",
+    "enter_chassis_number": "Enter chassis number",
+    "enter_charger_type": "Enter charger type",
+    "enter_charger_capacity": "Enter charger capacity",
+    "enter_current_type": "Enter current type",
+    "enter_model_name": "Enter model name",
+    "please_select_car_image": "Please select car image"
   },
 
   "trip": {
@@ -189,6 +197,7 @@
     "email": "Email",
     "number": "Number",
     "edit_details": "Edit Details"
+
   },
   "my_bookings": {
     "Ongoing": "Ongoing",
@@ -224,6 +233,8 @@
     "available": "Available",
     "address": "Address",
     "phone": "Phone",
-    "something_went_wrong": "Something went wrong, please try again"
+    "something_went_wrong": "Something went wrong, please try again",
+    "camera": "Camera",
+    "gallery": "Gallery"
   }
 }

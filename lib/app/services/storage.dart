@@ -1,7 +1,6 @@
 import 'dart:async';
 import 'package:get/get.dart';
 import 'package:get_storage/get_storage.dart';
-
 import 'enigma.dart';
 
 class GetStorageService extends GetxService {
@@ -12,7 +11,27 @@ class GetStorageService extends GetxService {
     return this;
   }
 
-  // we are utilisig encrypt class we decrypt once we read and encrypt before write.
+  String get getuserId => _runData.read('userId');
+
+  set setuserId(String val) => _runData.write('userId', val);
+
+  String get getName => _runData.read('name');
+
+  set setName(String val) => _runData.write('name', val);
+
+  String get getProfileUrl => _runData.read('profileUrl');
+
+  set setProfileUrl(String val) => _runData.write('profileUrl', val);
+
+  String get getPhone => _runData.read('phone');
+
+  set setPhone(String val) => _runData.write('phone', val);
+
+  String get getEmail => _runData.read('email');
+
+  set setEmail(String val) => _runData.write('email', val);
+
+//
 
   bool get getIsLoggedIn => _runData.read('isLogIn') ?? false;
 

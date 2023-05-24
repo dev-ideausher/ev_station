@@ -118,10 +118,18 @@ class LocaleKeys {
   static const cars_add_a_new_car = 'cars_add_a_new_car';
   static const cars_upload_image = 'cars_upload_image';
   static const cars_car_name = 'cars_car_name';
+  static const cars_model_name = 'cars_model_name';
   static const cars_chassis_number = 'cars_chassis_number';
   static const cars_charger_type = 'cars_charger_type';
   static const cars_charger_capacity = 'cars_charger_capacity';
   static const cars_current_type = 'cars_current_type';
+  static const cars_enter_car_name = 'cars_enter_car_name';
+  static const cars_enter_chassis_number = 'cars_enter_chassis_number';
+  static const cars_enter_charger_type = 'cars_enter_charger_type';
+  static const cars_enter_charger_capacity = 'cars_enter_charger_capacity';
+  static const cars_enter_current_type = 'cars_enter_current_type';
+  static const cars_enter_model_name = 'cars_enter_model_name';
+  static const cars_please_select_car_image = 'cars_please_select_car_image';
   static const trip_your_location = 'trip_your_location';
   static const trip_enter_destination = 'trip_enter_destination';
   static const trip_start_navigation = 'trip_start_navigation';
@@ -214,6 +222,8 @@ class LocaleKeys {
   static const common_address = 'common_address';
   static const common_phone = 'common_phone';
   static const common_something_went_wrong = 'common_something_went_wrong';
+  static const common_camera = 'common_camera';
+  static const common_gallery = 'common_gallery';
 }
 
 class Locales {
@@ -314,10 +324,18 @@ class Locales {
     'cars_add_a_new_car': 'Add a new Car',
     'cars_upload_image': 'Upload Image',
     'cars_car_name': 'Car Name',
+    'cars_model_name': 'Model Name',
     'cars_chassis_number': 'Chassis Number',
     'cars_charger_type': 'Charger Type',
     'cars_charger_capacity': 'Charger Capacity',
     'cars_current_type': 'Current Type',
+    'cars_enter_car_name': 'Enter car name',
+    'cars_enter_chassis_number': 'Enter chassis number',
+    'cars_enter_charger_type': 'Enter charger type',
+    'cars_enter_charger_capacity': 'Enter charger capacity',
+    'cars_enter_current_type': 'Enter current type',
+    'cars_enter_model_name': 'Enter model name',
+    'cars_please_select_car_image': 'Please select car image',
     'trip_your_location': 'Your Location',
     'trip_enter_destination': 'Enter Destination',
     'trip_start_navigation': 'Start Navigation',
@@ -406,5 +424,7 @@ class Locales {
     'common_address': 'Address',
     'common_phone': 'Phone',
     'common_something_went_wrong': 'Something went wrong, please try again',
+    'common_camera': 'Camera',
+    'common_gallery': 'Gallery',
   };
 }

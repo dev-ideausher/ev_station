@@ -4,6 +4,7 @@ import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 import '../../../services/index.dart';
+import '../../../services/storage.dart';
 import '../controllers/profile_detail_controller.dart';
 
 class ProfileDetailView extends GetView<ProfileDetailController> {
@@ -13,9 +14,13 @@ class ProfileDetailView extends GetView<ProfileDetailController> {
     return GestureDetector(
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
-          bottomNavigationBar: EvSattionBottomButton(
-              onPressed: () {},
-              label: LocaleKeys.profile_detail_edit_details.tr),
+          bottomNavigationBar: Obx(
+            () => EvSattionBottomButton(
+                onPressed: () => controller.onEditSaveTap(),
+                label: controller.isReadOnly.value
+                    ? LocaleKeys.profile_detail_edit_details.tr
+                    : LocaleKeys.common_confirm.tr),
+          ),
           body: Column(
             crossAxisAlignment: CrossAxisAlignment.stretch,
             children: [
@@ -27,7 +32,7 @@ class ProfileDetailView extends GetView<ProfileDetailController> {
                     Align(
                       alignment: Alignment.centerLeft,
                       child: GestureDetector(
-                        onTap: () => Get.back(),
+                        onTap: () => Get.back(result: true),
                         child: CommonImageView(
                           height: 30.kh,
                           width: 30.kh,
@@ -55,46 +60,78 @@ class ProfileDetailView extends GetView<ProfileDetailController> {
                           child: Stack(
                             alignment: Alignment.bottomRight,
                             children: [
-                              EvStationRoundedBox(
-                                  height: 115.kh,
-                                  width: 115.kh,
-                                  borderWidth: 4.kh,
-                                  isBorder: true,
-                                  borderRadius: 100,
-                                  borderColor: const Color(0xff0F75BC),
-                                  child: Container()),
-                              CommonImageView(
-                                height: 30.kh,
-                                width: 30.kh,
-                                svgPath: ImageConstant.svgCameraButton,
-                              )
+                              GetBuilder(builder:
+                                  (ProfileDetailController controller) {
+                                return EvStationRoundedBox(
+                                    height: 115.kh,
+                                    width: 115.kh,
+                                    borderRadius: 100,
+                                    child: controller.profilePicture == null
+                                        ? CommonImageView(
+                                            fit: BoxFit.cover,
+                                            url: Get.find<GetStorageService>()
+                                                .getProfileUrl,
+                                          )
+                                        : CommonImageView(
+                                            file: controller.profilePicture,
+                                          ));
+                              }),
+                              GestureDetector(
+                                  onTap: () => controller.isReadOnly.value
+                                      ? {}
+                                      : controller.onUploadPictureTap(),
+                                  child: CommonImageView(
+                                    height: 30.kh,
+                                    width: 30.kh,
+                                    svgPath: ImageConstant.svgCameraButton,
+                                  ))
                             ],
                           ),
                         ),
                         16.kheightBox,
-                        'Jonathan, 20'
+                        Get.find<GetStorageService>()
+                            .getName
                             .text600(18.kh, textAlign: TextAlign.center),
                         24.kheightBox,
                         LocaleKeys.profile_detail_full_name.tr.text500(16.kh),
                         8.kheightBox,
-                        EvStationTextField(
-                            radius: 4.kh,
-                            isBorder: true,
-                            hint: LocaleKeys.profile_detail_full_name.tr),
-                        16.kheightBox,
-                        LocaleKeys.profile_detail_email.tr.text500(16.kh),
-                        8.kheightBox,
-                        EvStationTextField(
-                            radius: 4.kh,
-                            isBorder: true,
-                            hint: LocaleKeys.profile_detail_email.tr),
-                        16.kheightBox,
-                        LocaleKeys.profile_detail_number.tr.text500(16.kh),
-                        8.kheightBox,
-                        EvStationTextField(
-                            radius: 4.kh,
-                            isBorder: true,
-                            hint: LocaleKeys.profile_detail_number.tr),
+                        Obx(
+                          () => Form(
+                            key: controller.formKey,
+                            child: Column(
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                EvStationTextField(
+                                    readOnly: controller.isReadOnly.value,
+                                    controller: controller.nameController,
+                                    radius: 4.kh,
+                                    isBorder: true,
+                                    hint:
+                                        LocaleKeys.profile_detail_full_name.tr),
+                                16.kheightBox,
+                                LocaleKeys.profile_detail_email.tr
+                                    .text500(16.kh),
+                                8.kheightBox,
+                                EvStationTextField(
+                                    readOnly: controller.isReadOnly.value,
+                                    controller: controller.emailController,
+                                    radius: 4.kh,
+                                    isBorder: true,
+                                    hint: LocaleKeys.profile_detail_email.tr),
+                                16.kheightBox,
+                                LocaleKeys.profile_detail_number.tr
+                                    .text500(16.kh),
+                                8.kheightBox,
+                                EvStationTextField(
+                                    readOnly: controller.isReadOnly.value,
+                                    controller: controller.numberController,
+                                    radius: 4.kh,
+                                    isBorder: true,
+                                    hint: LocaleKeys.profile_detail_number.tr),
+                              ],
+                            ),
+                          ),
+                        ),
                         16.kheightBox,
                       ],
                     ),

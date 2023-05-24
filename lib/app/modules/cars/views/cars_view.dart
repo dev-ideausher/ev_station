@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
 
-import '../../../routes/app_pages.dart';
 import '../controllers/cars_controller.dart';
 
 class CarsView extends GetView<CarsController> {
@@ -14,9 +13,9 @@ class CarsView extends GetView<CarsController> {
       onTap: () => FocusScope.of(context).unfocus(),
       child: Scaffold(
           bottomNavigationBar: Padding(
-            padding: paddingOnly(left: 20.kw, right: 20.kw, bottom: 36.kh),
+            padding: paddingOnly(left: 20.kw, right: 20.kw, bottom: 12.kh),
             child: EvStationButton(
-              onPressed: () => Get.toNamed(Routes.ADD_NEW_CAR),
+              onPressed: () => controller.onAddNewCarTap(),
               label: LocaleKeys.cars_add_a_new_car.tr,
             ),
           ),
@@ -55,104 +54,135 @@ class CarsView extends GetView<CarsController> {
                 ),
                 24.kheightBox,
                 Expanded(
-                  child: ListView.builder(
-                      padding: EdgeInsets.zero,
-                      itemCount: 2,
-                      itemBuilder: (context, index) {
-                        return Column(
-                          children: [
-                            EvStationRoundedBox(
-                                color: ColorUtil.carElement,
-                                child: Padding(
-                                  padding: paddingSymmetric(
-                                      horizontal: 20.kw, vertical: 13.kh),
-                                  child: Column(
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.stretch,
-                                    children: [
-                                      'Dodge Challenger'.text600(16.kh),
-                                      4.kheightBox,
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          'Supercharger'.text400(14.kh),
-                                          'GECG-01254'.text500(12.kh,
-                                              color: ColorUtil.mainColor1),
-                                        ],
-                                      ),
-                                      16.kheightBox,
-                                      Row(
-                                        mainAxisAlignment:
-                                            MainAxisAlignment.spaceBetween,
-                                        children: [
-                                          Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.start,
-                                            children: [
-                                              Row(
-                                                children: [
-                                                  CommonImageView(
-                                                    height: 20.kh,
-                                                    width: 20.kh,
-                                                    svgPath:
-                                                        ImageConstant.svgBolt,
-                                                  ),
-                                                  4.kwidthBox,
-                                                  'Type - 2'.text500(12.kh,
-                                                      color: ColorUtil
-                                                          .mainDarkColor1)
-                                                ],
-                                              ),
-                                              7.kheightBox,
-                                              Row(
-                                                children: [
-                                                  CommonImageView(
-                                                    height: 20.kh,
-                                                    width: 20.kh,
-                                                    svgPath:
-                                                        ImageConstant.svgRefuel,
-                                                  ),
-                                                  4.kwidthBox,
-                                                  'DC'.text500(12.kh,
-                                                      color: ColorUtil
-                                                          .mainDarkColor1)
-                                                ],
-                                              ),
-                                              7.kheightBox,
-                                              Row(
-                                                children: [
-                                                  CommonImageView(
-                                                    height: 20.kh,
-                                                    width: 20.kh,
-                                                    svgPath:
-                                                        ImageConstant.svgCharge,
-                                                  ),
-                                                  4.kwidthBox,
-                                                  '24Kw'.text500(12.kh,
-                                                      color: ColorUtil
-                                                          .mainDarkColor1)
-                                                ],
-                                              ),
-                                              7.kheightBox,
-                                            ],
-                                          ),
-                                          CommonImageView(
-                                            height: 75.kh,
-                                            width: 154.kw,
-                                            fit: BoxFit.contain,
-                                            imagePath:
-                                                ImageConstant.pngDodgeCar,
-                                          )
-                                        ],
-                                      )
-                                    ],
-                                  ),
-                                )),
-                            24.kheightBox
-                          ],
-                        );
-                      }),
+                  child: Obx(
+                    () => controller.cars.isEmpty
+                        ? Center(
+                            child: 'No Cars'.text500(16.kh,
+                                color: Colors.black,
+                                textAlign: TextAlign.center),
+                          )
+                        : ListView.builder(
+                            padding: EdgeInsets.zero,
+                            itemCount: controller.cars.length,
+                            itemBuilder: (context, index) {
+                              return Column(
+                                children: [
+                                  EvStationRoundedBox(
+                                      color: ColorUtil.carElement,
+                                      child: Padding(
+                                        padding: paddingSymmetric(
+                                            horizontal: 20.kw, vertical: 13.kh),
+                                        child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            (controller.cars[index].name ?? '')
+                                                .text600(16.kh),
+                                            4.kheightBox,
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                (controller.cars[index]
+                                                            .modelName ??
+                                                        '')
+                                                    .text400(14.kh),
+                                                (controller.cars[index]
+                                                            .chassisNumber ??
+                                                        '')
+                                                    .text500(12.kh,
+                                                        color: ColorUtil
+                                                            .mainColor1),
+                                              ],
+                                            ),
+                                            16.kheightBox,
+                                            Row(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment
+                                                      .spaceBetween,
+                                              children: [
+                                                Column(
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.start,
+                                                  children: [
+                                                    Row(
+                                                      children: [
+                                                        CommonImageView(
+                                                          height: 20.kh,
+                                                          width: 20.kh,
+                                                          svgPath: ImageConstant
+                                                              .svgBolt,
+                                                        ),
+                                                        4.kwidthBox,
+                                                        (controller.cars[index]
+                                                                    .chargerType ??
+                                                                '')
+                                                            .text500(12.kh,
+                                                                color: ColorUtil
+                                                                    .mainDarkColor1)
+                                                      ],
+                                                    ),
+                                                    7.kheightBox,
+                                                    Row(
+                                                      children: [
+                                                        CommonImageView(
+                                                          height: 20.kh,
+                                                          width: 20.kh,
+                                                          svgPath: ImageConstant
+                                                              .svgRefuel,
+                                                        ),
+                                                        4.kwidthBox,
+                                                        (controller.cars[index]
+                                                                    .currentType ??
+                                                                '')
+                                                            .text500(12.kh,
+                                                                color: ColorUtil
+                                                                    .mainDarkColor1)
+                                                      ],
+                                                    ),
+                                                    7.kheightBox,
+                                                    Row(
+                                                      children: [
+                                                        CommonImageView(
+                                                          height: 20.kh,
+                                                          width: 20.kh,
+                                                          svgPath: ImageConstant
+                                                              .svgCharge,
+                                                        ),
+                                                        4.kwidthBox,
+                                                        (controller.cars[index]
+                                                                    .chargerCapacity ??
+                                                                '')
+                                                            .text500(12.kh,
+                                                                color: ColorUtil
+                                                                    .mainDarkColor1)
+                                                      ],
+                                                    ),
+                                                    7.kheightBox,
+                                                  ],
+                                                ),
+                                                EvStationRoundedBox(
+                                                  child: CommonImageView(
+                                                      height: 75.kh,
+                                                      width: 154.kw,
+                                                      fit: BoxFit.cover,
+                                                      url: controller
+                                                          .cars[index]
+                                                          .images?[0]
+                                                      // ImageConstant.pngDodgeCar,
+                                                      ),
+                                                )
+                                              ],
+                                            )
+                                          ],
+                                        ),
+                                      )),
+                                  24.kheightBox
+                                ],
+                              );
+                            }),
+                  ),
                 )
               ],
             ),

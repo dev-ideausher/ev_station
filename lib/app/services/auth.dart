@@ -127,7 +127,7 @@ class AuthService extends GetxService {
     // erase the user's token and data in GetStorageService
     Get.find<GetStorageService>().logout();
     // firbase logout
-    auth.logout();
+    await auth.logout();
     // navigate to login page
     await Get.offAllNamed(Routes.ONBOARDING);
     await DialogHelper.hideDialog();

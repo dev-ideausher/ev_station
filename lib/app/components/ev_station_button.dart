@@ -37,41 +37,38 @@ class EvStationButton extends StatelessWidget {
       height: height ?? 48.kh,
       width: width,
       child: ElevatedButton(
-        onPressed: isLoading ? () {} : onPressed,
-        style: ElevatedButton.styleFrom(
-          elevation: 0,
-          backgroundColor:
-              color ?? (isActive ? ColorUtil.mainColor1 : ColorUtil.evGray),
-          shape: RoundedRectangleBorder(
-              side: isBorder
-                  ? BorderSide(
-                      color: borderColor ?? const Color(0xFF000000),
-                      width: borderWidth ?? 1)
-                  : BorderSide.none,
-              borderRadius: BorderRadius.circular(borderRadius ?? 8.kh)),
-        ),
-        child: isLoading
-            ? isActive
-                ? SizedBox(
-                    height: 20.kh,
-                    width: 20.kh,
-                    child: const CircularProgressIndicator(
-                      color: Colors.white,
-                    ),
-                  )
-                : SizedBox(
-                    height: 20.kh,
-                    width: 20.kh,
-                    child: const CircularProgressIndicator(
-                      color: ColorUtil.mainColor1,
-                    ),
-                  )
-            : child ??
-                Text(label ?? '',
-                    style: TextStyleUtil.genSans500(
-                        fontSize: fontSize ?? 16.kh,
-                        color: labelColor ?? Colors.white)),
-      ),
+          onPressed: isLoading ? () {} : onPressed,
+          style: ElevatedButton.styleFrom(
+            elevation: 0,
+            backgroundColor:
+                color ?? (isActive ? ColorUtil.mainColor1 : ColorUtil.evGray),
+            shape: RoundedRectangleBorder(
+                side: isBorder
+                    ? BorderSide(
+                        color: borderColor ?? const Color(0xFF000000),
+                        width: borderWidth ?? 1)
+                    : BorderSide.none,
+                borderRadius: BorderRadius.circular(borderRadius ?? 8.kh)),
+          ),
+          child: isLoading
+              ? isActive
+                  ? SizedBox(
+                      height: 20.kh,
+                      width: 20.kh,
+                      child: const CircularProgressIndicator(
+                        color: Colors.white,
+                      ),
+                    )
+                  : SizedBox(
+                      height: 20.kh,
+                      width: 20.kh,
+                      child: const CircularProgressIndicator(
+                        color: ColorUtil.mainColor1,
+                      ),
+                    )
+              : child ??
+                  (label ?? '').text500(fontSize ?? 16.kh,
+                      color: labelColor ?? Colors.white)),
     );
   }
 }

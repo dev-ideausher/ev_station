@@ -1,10 +1,14 @@
 import 'dart:async';
 import 'package:dio/dio.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:get/get_navigation/get_navigation.dart';
 import 'package:get/instance_manager.dart';
+import '../../routes/app_pages.dart';
 import '../dialog_helper.dart';
 import '../snackbar.dart';
 import '../storage.dart';
 import 'exceptions.dart';
+import 'jwt_decoder.dart';
 
 class AppInterceptors extends Interceptor {
   bool isOverlayLoader;
@@ -14,10 +18,16 @@ class AppInterceptors extends Interceptor {
 
   @override
   FutureOr<dynamic> onRequest(
-      RequestOptions options, RequestInterceptorHandler handler) {
-    options.headers = {"token": Get.find<GetStorageService>().getEncjwToken};
+      RequestOptions options, RequestInterceptorHandler handler) async {
     isOverlayLoader ? DialogHelper.showLoading() : null;
-    super.onRequest(options, handler);
+    await Helpers.validateToken(
+      onSuccess: () {
+        options.headers = {
+          "token": Get.find<GetStorageService>().getEncjwToken
+        };
+        super.onRequest(options, handler);
+      },
+    );
   }
 
   @override
@@ -72,26 +82,31 @@ class AppInterceptors extends Interceptor {
         queryParameters: requestOptions.queryParameters,
         options: options);
   }
+}
 
-  ///TODO:if firebase is needed
-  // Future<bool> refreshToken() async {
-  //   try {
-  //     Get.find<GetStorageService>().token = (await FirebaseAuth.instance.currentUser?.getIdToken(true))!;
-  //     print(Get.find<GetStorageService>().token);
-  //     return true;
-  //   } catch (e) {
-  //     Get.find<MorePageController>().userLogout();
-  //     return false;
-  //   }
+class Helpers {
+  static bool _tokenIsValid() {
+    return Get.find<GetStorageService>().getEncjwToken.isNotEmpty
+        ? JwtDecoder.isValid(Get.find<GetStorageService>().getEncjwToken)
+        : false;
+  }
 
-  //   /*  final response = await Dio().post('/auth/refresh', data: {'refreshToken': "refreshToken"});
-  //   if (response.statusCode == 201) {
-  //     var accessToken = response.data;
-  //     return true;
-  //   } else {
-  //     // refresh token is wrong
-  //     print("Logout");
-  //     return false;
-  //   }*/
-  // }
+  static Future<bool> validateToken({required Function() onSuccess}) async {
+    if (_tokenIsValid()) {
+      onSuccess();
+      return true;
+    } else {
+      try {
+        Get.find<GetStorageService>().setEncjwToken =
+            (await FirebaseAuth.instance.currentUser?.getIdToken(true))!;
+        onSuccess();
+        return true;
+      } catch (e) {
+        showMySnackbar(msg: "Session Expired. Please Login Again");
+        Get.find<GetStorageService>().logout();
+        Get.offAllNamed(Routes.ONBOARDING);
+        return false;
+      }
+    }
+  }
 }

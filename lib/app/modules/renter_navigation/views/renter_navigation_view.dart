@@ -21,6 +21,7 @@ class RenterNavigationView extends GetView<RenterNavigationController> {
   Widget build(BuildContext context) {
     return Obx(
       () => Scaffold(
+        resizeToAvoidBottomInset: false,
         body: PageView(
           physics: const NeverScrollableScrollPhysics(),
           controller: controller.pageViewController,

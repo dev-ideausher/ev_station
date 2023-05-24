@@ -13,4 +13,12 @@ class Endpoints {
   //Post APIs
   static const String userOnboarding = "/user/onboarding";
   static const String userLogin = "/user/login";
+  static const String fileUpload = "/file-upload";
+  static const String addCars = "/cars";
+
+  //Patch APIs
+  static const String updateUser = "/user/";
+
+  //Get APIs
+  static const String getAllCars = "/cars/all/app";
 }

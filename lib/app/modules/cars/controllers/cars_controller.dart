@@ -1,12 +1,17 @@
+import 'package:ev_station/app/services/dio/api_service.dart';
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CarsController extends GetxController {
-  //TODO: Implement CarsController
+import '../../../models/get_all_cars_model.dart';
+import '../../../routes/app_pages.dart';
 
-  final count = 0.obs;
+class CarsController extends GetxController {
+  RxList<Cars> cars = <Cars>[].obs;
+
   @override
   void onInit() {
     super.onInit();
+    getAllCarsAPI();
   }
 
   @override
@@ -19,5 +24,18 @@ class CarsController extends GetxController {
     super.onClose();
   }
 
-  void increment() => count.value++;
+  getAllCarsAPI() async {
+    try {
+      await APIManager.getAllCarsAPI().then((value) => value.data['status']
+          ? cars.value = GetAllCars.fromJson(value.data).cars ?? []
+          : null);
+    } catch (e) {
+      debugPrint(e.toString());
+    }
+  }
+
+  onAddNewCarTap() async {
+    bool refresh = await Get.toNamed(Routes.ADD_NEW_CAR);
+    refresh ? await getAllCarsAPI() : null;
+  }
 }

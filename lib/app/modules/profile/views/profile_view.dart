@@ -1,4 +1,5 @@
 import 'package:ev_station/app/services/index.dart';
+import 'package:ev_station/app/services/storage.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
@@ -29,16 +30,22 @@ class ProfileView extends GetView<ProfileController> {
             child: Column(
               children: [
                 28.kheightBox,
-                EvStationRoundedBox(
-                    height: 115.kh,
-                    width: 115.kh,
-                    borderWidth: 4.kh,
-                    isBorder: true,
-                    borderRadius: 100,
-                    borderColor: const Color(0xff0F75BC),
-                    child: Container()),
-                16.kheightBox,
-                'Jonathan, 20'.text600(18.kh),
+                GetBuilder(builder: (ProfileController controller) {
+                  return Column(
+                    children: [
+                      EvStationRoundedBox(
+                          height: 115.kh,
+                          width: 115.kh,
+                          borderRadius: 100,
+                          child: CommonImageView(
+                            fit: BoxFit.cover,
+                            url: Get.find<GetStorageService>().getProfileUrl,
+                          )),
+                      16.kheightBox,
+                      Get.find<GetStorageService>().getName.text600(18.kh),
+                    ],
+                  );
+                }),
                 36.kheightBox,
                 EvStationRoundedBox(
                     onTap: () => controller.onProfileDetailsTap(),
@@ -118,7 +125,8 @@ class ProfileView extends GetView<ProfileController> {
                       ),
                     )),
                 const Spacer(),
-                EvStationRoundedBox(onTap: () => controller.onLogoutTap(),
+                EvStationRoundedBox(
+                    onTap: () => controller.onLogoutTap(),
                     isBorder: true,
                     borderColor: const Color(0xffFF0000),
                     child: Padding(

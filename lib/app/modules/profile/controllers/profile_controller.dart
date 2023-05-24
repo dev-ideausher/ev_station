@@ -18,8 +18,9 @@ class ProfileController extends GetxController {
     super.onClose();
   }
 
-  onProfileDetailsTap() {
-    Get.toNamed(Routes.PROFILE_DETAIL);
+  onProfileDetailsTap() async {
+    bool success = await Get.toNamed(Routes.PROFILE_DETAIL);
+    success ? update() : null;
   }
 
   onMyBookingsTap() {

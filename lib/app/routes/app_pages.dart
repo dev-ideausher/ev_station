@@ -72,7 +72,7 @@ class AppPages {
     GetPage(
       name: _Paths.ONBOARDING,
       page: () => const OnboardingView(),
-      binding: OnboardingBinding(), 
+      binding: OnboardingBinding(),
     ),
     GetPage(
       name: _Paths.OTP_VERIFICATION,

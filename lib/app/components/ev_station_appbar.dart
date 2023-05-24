@@ -29,13 +29,8 @@ class EvStationAppbar extends StatelessWidget implements PreferredSizeWidget {
       automaticallyImplyLeading: false,
       centerTitle: false,
       title: titleWidget ??
-          Text(
-            title ?? '',
-            textAlign: TextAlign.start,
-            //TODO
-            style: TextStyleUtil.genSans600(
-                fontSize: 20.kh, color: ColorUtil.mainDarkColor1),
-          ),
+          (title ?? '').text600(20.kh,
+              color: ColorUtil.mainDarkColor1, textAlign: TextAlign.start),
       backgroundColor: Colors.transparent,
       elevation: 0,
       leading: isLeading

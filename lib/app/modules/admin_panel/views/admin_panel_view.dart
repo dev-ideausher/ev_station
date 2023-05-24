@@ -48,6 +48,10 @@ class AdminPanelView extends GetView<AdminPanelController> {
                   onPressed: () =>
                       log(Get.find<GetStorageService>().getEncjwToken),
                 ),
+                AdminPanelButton(
+                  label: 'uid',
+                  onPressed: () => log(Get.find<GetStorageService>().getuserId),
+                ),
               ],
             ),
           ),
