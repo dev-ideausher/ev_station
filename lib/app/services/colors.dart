@@ -16,5 +16,6 @@ extension ColorUtil on BuildContext {
   static const Color textField = Color(0xffF7FFFA);
   static const Color selectedLabel = Color(0xff212E31);
   static const Color unSelectedLabel = Color(0xffABB7BA);
-  static const Color mainRed = Color(0xffDA0F0F); 
+  static const Color mainRed = Color(0xffDA0F0F);
+  static const Color lightRed = Color(0xffF20808);
 }

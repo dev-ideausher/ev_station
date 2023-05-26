@@ -7,3 +7,4 @@ export 'package:ev_station/app/constants/image_constant.dart';
 export 'package:ev_station/app/services/colors.dart';
 export 'package:ev_station/app/services/text_style_util.dart';
 export 'package:ev_station/app/components/ev_station_rounded_box.dart';
+export 'package:get/get_utils/src/extensions/internacionalization.dart';

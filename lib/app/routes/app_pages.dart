@@ -1,4 +1,3 @@
-import 'package:ev_station/app/modules/my_subscription/views/my_subscription_view.dart';
 import 'package:get/get.dart';
 
 import '../modules/add_comment/bindings/add_comment_binding.dart';
@@ -9,6 +8,8 @@ import '../modules/admin_panel/bindings/admin_panel_binding.dart';
 import '../modules/admin_panel/views/admin_panel_view.dart';
 import '../modules/book_slot/bindings/book_slot_binding.dart';
 import '../modules/book_slot/views/book_slot_view.dart';
+import '../modules/card_payment/bindings/card_payment_binding.dart';
+import '../modules/card_payment/views/card_payment_view.dart';
 import '../modules/cars/bindings/cars_binding.dart';
 import '../modules/cars/views/cars_view.dart';
 import '../modules/coupon/bindings/coupon_binding.dart';
@@ -22,7 +23,9 @@ import '../modules/make_payment/views/make_payment_view.dart';
 import '../modules/my_bookings/bindings/my_bookings_binding.dart';
 import '../modules/my_bookings/views/my_bookings_view.dart';
 import '../modules/my_subscription/bindings/my_subscription_binding.dart';
-
+import '../modules/my_subscription/views/my_subscription_view.dart';
+import '../modules/notification/bindings/notification_binding.dart';
+import '../modules/notification/views/notification_view.dart';
 import '../modules/onboarding/bindings/onboarding_binding.dart';
 import '../modules/onboarding/views/onboarding_view.dart';
 import '../modules/otp_verification/bindings/otp_verification_binding.dart';
@@ -173,6 +176,16 @@ class AppPages {
       name: _Paths.MY_SUBSCRIPTION,
       page: () => const MySubscriptionView(),
       binding: MySubscriptionBinding(),
+    ),
+    GetPage(
+      name: _Paths.CARD_PAYMENT,
+      page: () => const CardPaymentView(),
+      binding: CardPaymentBinding(),
+    ),
+    GetPage(
+      name: _Paths.NOTIFICATION,
+      page: () => const NotificationView(),
+      binding: NotificationBinding(),
     ),
   ];
 }

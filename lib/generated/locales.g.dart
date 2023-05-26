@@ -87,12 +87,12 @@ class LocaleKeys {
   static const searched_available_connectors = 'searched_available_connectors';
   static const station_detail_book_a_slot = 'station_detail_book_a_slot';
   static const station_detail_connectors = 'station_detail_connectors';
-  static const station_detail_overview = 'station_detail_overview';
+  static const station_detail_info = 'station_detail_info';
+  static const station_detail_chargers = 'station_detail_chargers';
   static const station_detail_amenities = 'station_detail_amenities';
   static const station_detail_cafeteria = 'station_detail_cafeteria';
   static const station_detail_market = 'station_detail_market';
   static const station_detail_Hospital = 'station_detail_Hospital';
-  static const station_detail_Church = 'station_detail_Church';
   static const station_detail_reviews = 'station_detail_reviews';
   static const station_detail_see_more = 'station_detail_see_more';
   static const station_detail_add_a_comment = 'station_detail_add_a_comment';
@@ -108,6 +108,18 @@ class LocaleKeys {
   static const station_detail_set_alert = 'station_detail_set_alert';
   static const station_detail_alert_has_been = 'station_detail_alert_has_been';
   static const station_detail_go_back_to = 'station_detail_go_back_to';
+  static const station_detail_get_directions = 'station_detail_get_directions';
+  static const station_detail_route_planner = 'station_detail_route_planner';
+  static const station_detail_tesla_plug = 'station_detail_tesla_plug';
+  static const station_detail_acdc = 'station_detail_acdc';
+  static const station_detail_max_power = 'station_detail_max_power';
+  static const station_detail_book = 'station_detail_book';
+  static const station_detail_about = 'station_detail_about';
+  static const station_detail_location = 'station_detail_location';
+  static const station_detail_temple = 'station_detail_temple';
+  static const station_detail_wifi = 'station_detail_wifi';
+  static const station_detail_entertainment = 'station_detail_entertainment';
+  static const station_detail_air_for_tyres = 'station_detail_air_for_tyres';
   static const station_detail_you_will_be = 'station_detail_you_will_be';
   static const add_a_comment_add_a_comment = 'add_a_comment_add_a_comment';
   static const add_a_comment_rate_your_experience =
@@ -182,6 +194,9 @@ class LocaleKeys {
   static const my_profile_profile_details = 'my_profile_profile_details';
   static const my_profile_my_bookings = 'my_profile_my_bookings';
   static const my_profile_my_subscription = 'my_profile_my_subscription';
+  static const my_profile_settings = 'my_profile_settings';
+  static const my_profile_notification = 'my_profile_notification';
+  static const my_profile_card_payments = 'my_profile_card_payments';
   static const my_profile_log_out = 'my_profile_log_out';
   static const profile_detail_full_name = 'profile_detail_full_name';
   static const profile_detail_email = 'profile_detail_email';
@@ -219,11 +234,26 @@ class LocaleKeys {
   static const common_confirm = 'common_confirm';
   static const common_apply = 'common_apply';
   static const common_available = 'common_available';
+  static const common_not_available = 'common_not_available';
   static const common_address = 'common_address';
   static const common_phone = 'common_phone';
   static const common_something_went_wrong = 'common_something_went_wrong';
   static const common_camera = 'common_camera';
   static const common_gallery = 'common_gallery';
+  static const card_payment_all_cards = 'card_payment_all_cards';
+  static const card_payment_master_card = 'card_payment_master_card';
+  static const card_payment_add_a_new_card = 'card_payment_add_a_new_card';
+  static const card_payment_card_holder_Name = 'card_payment_card_holder_Name';
+  static const card_payment_enter_details = 'card_payment_enter_details';
+  static const card_payment_account_name = 'card_payment_account_name';
+  static const card_payment_mm_yy = 'card_payment_mm_yy';
+  static const card_payment_cvv = 'card_payment_cvv';
+  static const card_payment_save_for_future_use =
+      'card_payment_save_for_future_use';
+  static const card_payment_add_card = 'card_payment_add_card';
+  static const notification_push_notification =
+      'notification_push_notification';
+  static const notification_pause_all = 'notification_pause_all';
 }
 
 class Locales {
@@ -297,12 +327,12 @@ class Locales {
     'searched_available_connectors': 'Available Connectors',
     'station_detail_book_a_slot': 'Book a Slot',
     'station_detail_connectors': 'Connectors',
-    'station_detail_overview': 'Overview',
+    'station_detail_info': 'Info',
+    'station_detail_chargers': 'Chargers',
     'station_detail_amenities': 'Amenities',
     'station_detail_cafeteria': 'Cafeteria',
     'station_detail_market': 'Market',
     'station_detail_Hospital': 'Hospital',
-    'station_detail_Church': 'Church',
     'station_detail_reviews': 'Reviews',
     'station_detail_see_more': 'See More',
     'station_detail_add_a_comment': 'Add a comment',
@@ -315,6 +345,18 @@ class Locales {
     'station_detail_set_alert': 'Set Alert',
     'station_detail_alert_has_been': 'Alert has been removed',
     'station_detail_go_back_to': 'Go back to add the alert again.',
+    'station_detail_get_directions': 'Get Directions',
+    'station_detail_route_planner': 'Route Planner',
+    'station_detail_tesla_plug': 'Tesla Plug',
+    'station_detail_acdc': 'AC/DC',
+    'station_detail_max_power': 'Max. Power',
+    'station_detail_book': 'Book',
+    'station_detail_about': 'About',
+    'station_detail_location': 'Location',
+    'station_detail_temple': 'Temple',
+    'station_detail_wifi': 'Wifi',
+    'station_detail_entertainment': 'Entertainment',
+    'station_detail_air_for_tyres': 'Air for Tyres',
     'station_detail_you_will_be':
         'You will be notified when the station gets online. To set alert toggle the alert button below',
     'add_a_comment_add_a_comment': 'Add a comment',
@@ -385,6 +427,9 @@ class Locales {
     'my_profile_profile_details': 'Profile Details',
     'my_profile_my_bookings': 'My Bookings',
     'my_profile_my_subscription': 'My Subscription',
+    'my_profile_settings': 'Settings',
+    'my_profile_notification': 'Notification',
+    'my_profile_card_payments': 'Card & Payments',
     'my_profile_log_out': 'Log Out',
     'profile_detail_full_name': 'Full Name',
     'profile_detail_email': 'Email',
@@ -421,10 +466,23 @@ class Locales {
     'common_confirm': 'Confirm',
     'common_apply': 'Apply',
     'common_available': 'Available',
+    'common_not_available': 'Not Available',
     'common_address': 'Address',
     'common_phone': 'Phone',
     'common_something_went_wrong': 'Something went wrong, please try again',
     'common_camera': 'Camera',
     'common_gallery': 'Gallery',
+    'card_payment_all_cards': 'All cards',
+    'card_payment_master_card': 'Master Card',
+    'card_payment_add_a_new_card': 'Add a new card',
+    'card_payment_card_holder_Name': 'Card Holder Name',
+    'card_payment_enter_details': 'Enter Details',
+    'card_payment_account_name': 'Account Name',
+    'card_payment_mm_yy': 'MM/YY',
+    'card_payment_cvv': 'CVV',
+    'card_payment_save_for_future_use': 'Save for future use',
+    'card_payment_add_card': 'Add card',
+    'notification_push_notification': 'Push notification',
+    'notification_pause_all': 'Pause All',
   };
 }

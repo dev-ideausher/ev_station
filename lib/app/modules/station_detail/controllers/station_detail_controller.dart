@@ -21,31 +21,13 @@ class StationDetailController extends GetxController
     0.1,
   ];
 
-  List<Map<String, String>> data = [
-    {
-      'icon': ImageConstant.svgCafeteria,
-      'label': LocaleKeys.station_detail_cafeteria.tr
-    },
-    {
-      'icon': ImageConstant.svgMarket,
-      'label': LocaleKeys.station_detail_market.tr
-    },
-    {
-      'icon': ImageConstant.svgHospital,
-      'label': LocaleKeys.station_detail_Hospital.tr
-    },
-    {
-      'icon': ImageConstant.svgChurch,
-      'label': LocaleKeys.station_detail_Church.tr
-    },
-  ];
-
   double rating = 2;
 
   @override
   void onInit() {
     super.onInit();
-    tabController = TabController(length: 2, vsync: this);
+    tabController = TabController(length: 3, vsync: this);
+    tabController!.addListener(handleTabSection);
   }
 
   @override
@@ -56,6 +38,12 @@ class StationDetailController extends GetxController
   @override
   void onClose() {
     super.onClose();
+  }
+
+  void handleTabSection() {
+    if (tabController!.indexIsChanging) {
+      update();
+    }
   }
 
   onBookASlotTap() {

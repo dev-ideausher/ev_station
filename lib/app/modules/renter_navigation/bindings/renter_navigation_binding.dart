@@ -21,8 +21,6 @@ class RenterNavigationBinding extends Bindings {
     Get.lazyPut<TripController>(
       () => TripController(),
     );
-    Get.lazyPut<ProfileController>(
-      () => ProfileController(),
-    );
+    Get.lazyPut<ProfileController>(() => ProfileController(), fenix: true);
   }
 }

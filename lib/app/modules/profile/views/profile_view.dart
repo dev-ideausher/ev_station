@@ -124,6 +124,32 @@ class ProfileView extends GetView<ProfileController> {
                         ],
                       ),
                     )),
+                16.kheightBox,
+                EvStationRoundedBox(
+                    onTap: () => controller.onSettingsTap(),
+                    isBorder: true,
+                    borderColor: ColorUtil.mainDarkColor1,
+                    child: Padding(
+                      padding:
+                          paddingSymmetric(horizontal: 13.kw, vertical: 12.kh),
+                      child: Row(
+                        children: [
+                          CommonImageView(
+                            height: 20.kh,
+                            width: 20.kh,
+                            svgPath: ImageConstant.svgSettings,
+                            svgColor: const Color(0xff1C274C),
+                          ),
+                          8.kwidthBox,
+                          LocaleKeys.my_profile_settings.tr.text500(14.kh),
+                          const Spacer(),
+                          Icon(
+                            Icons.arrow_forward_ios,
+                            size: 15.kh,
+                          )
+                        ],
+                      ),
+                    )),
                 const Spacer(),
                 EvStationRoundedBox(
                     onTap: () => controller.onLogoutTap(),

@@ -57,6 +57,11 @@ class ImageConstant {
   static String svgCameraButton = 'assets/images/camera_button.svg';
   static String svgVerifiedCheck = 'assets/images/verified_check.svg';
   static String svgLocationArt = 'assets/images/location_art.svg';
+  static String svgLocation3 = 'assets/images/location3.svg';
+  static String svgSettings = 'assets/images/settings.svg';
+  static String svgCard = 'assets/images/card.svg';
+  static String svgNotification = 'assets/images/notification.svg';
+  static String svgMasterCard = 'assets/images/mastercard.svg';
 
 //PNGs
   static String pngBackground1 = 'assets/images/launch_background.png';

@@ -36,7 +36,6 @@
     "please_enter_a_proper_number": "Please enter a proper number",
     "please_enter_proper_email": "Please enter proper email",
     "please_enter_a_password": "Please Enter a password"
-
   },
 
   "create_account": {
@@ -85,12 +84,13 @@
   "station_detail": {
     "book_a_slot": "Book a Slot",
     "connectors": "Connectors",
-    "overview": "Overview",
+    "info": "Info",
+    "chargers": "Chargers",
     "amenities": "Amenities",
     "cafeteria": "Cafeteria",
     "market": "Market",
     "Hospital": "Hospital",
-    "Church": "Church",
+
     "reviews": "Reviews",
     "see_more": "See More",
     "add_a_comment": "Add a comment",
@@ -103,6 +103,18 @@
     "set_alert": "Set Alert",
     "alert_has_been": "Alert has been removed",
     "go_back_to": "Go back to add the alert again.",
+    "get_directions": "Get Directions",
+    "route_planner": "Route Planner",
+    "tesla_plug": "Tesla Plug",
+    "acdc": "AC/DC",
+    "max_power": "Max. Power",
+    "book": "Book",
+    "about": "About",
+    "location": "Location",
+    "temple": "Temple",
+    "wifi": "Wifi",
+    "entertainment": "Entertainment",
+    "air_for_tyres": "Air for Tyres",
     "you_will_be": "You will be notified when the station gets online. To set alert toggle the alert button below"
   },
 
@@ -189,6 +201,9 @@
     "profile_details": "Profile Details",
     "my_bookings": "My Bookings",
     "my_subscription": "My Subscription",
+    "settings": "Settings",
+    "notification": "Notification",
+    "card_payments": "Card & Payments",
     "log_out": "Log Out"
   },
 
@@ -197,7 +212,6 @@
     "email": "Email",
     "number": "Number",
     "edit_details": "Edit Details"
-
   },
   "my_bookings": {
     "Ongoing": "Ongoing",
@@ -231,10 +245,29 @@
     "confirm": "Confirm",
     "apply": "Apply",
     "available": "Available",
+    "not_available": "Not Available",
     "address": "Address",
     "phone": "Phone",
     "something_went_wrong": "Something went wrong, please try again",
     "camera": "Camera",
     "gallery": "Gallery"
+  },
+
+  "card_payment": {
+    "all_cards": "All cards",
+    "master_card": "Master Card",
+    "add_a_new_card": "Add a new card",
+    "card_holder_Name": "Card Holder Name",
+    "enter_details": "Enter Details",
+    "account_name": "Account Name",
+    "mm_yy": "MM/YY",
+    "cvv": "CVV",
+    "save_for_future_use": "Save for future use",
+    "add_card": "Add card"
+  },
+
+  "notification": {
+    "push_notification": "Push notification",
+    "pause_all": "Pause All"
   }
 }
