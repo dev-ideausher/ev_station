@@ -27,6 +27,7 @@ abstract class Routes {
   static const MY_SUBSCRIPTION = _Paths.MY_SUBSCRIPTION;
   static const CARD_PAYMENT = _Paths.CARD_PAYMENT;
   static const NOTIFICATION = _Paths.NOTIFICATION;
+  static const LISTER_NAVIGATION = _Paths.LISTER_NAVIGATION;
 }
 
 abstract class _Paths {
@@ -55,4 +56,5 @@ abstract class _Paths {
   static const MY_SUBSCRIPTION = '/my-subscription';
   static const CARD_PAYMENT = '/card-payment';
   static const NOTIFICATION = '/notification';
+  static const LISTER_NAVIGATION = '/lister-navigation';
 }

@@ -1,6 +1,10 @@
 class Endpoints {
   Endpoints._();
 
+  /// google API keys
+  static const String googlePlacesAPIKey =
+      'AIzaSyA4GNoA0fXKmwu0QLcvx57SZzwH_wKxojA';
+
   // base url
   static const String baseUrl = "http://18.218.245.223:8000";
 

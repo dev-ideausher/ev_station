@@ -9,6 +9,7 @@ import '../../../services/colors.dart';
 import '../../../services/storage.dart';
 import '../controllers/admin_panel_controller.dart';
 import 'admin_panel_button.dart';
+import 'flexible.dart';
 
 class AdminPanelView extends GetView<AdminPanelController> {
   const AdminPanelView({Key? key}) : super(key: key);
@@ -51,6 +52,10 @@ class AdminPanelView extends GetView<AdminPanelController> {
                 AdminPanelButton(
                   label: 'uid',
                   onPressed: () => log(Get.find<GetStorageService>().getuserId),
+                ),
+                AdminPanelButton(
+                  label: 'uid',
+                  onPressed: () => Get.to(() => FlexibleEx()),
                 ),
               ],
             ),

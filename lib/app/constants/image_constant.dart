@@ -62,6 +62,7 @@ class ImageConstant {
   static String svgCard = 'assets/images/card.svg';
   static String svgNotification = 'assets/images/notification.svg';
   static String svgMasterCard = 'assets/images/mastercard.svg';
+  static String svgEvStationPinDrop = 'assets/images/ev_station_pin_drop.svg';
 
 //PNGs
   static String pngBackground1 = 'assets/images/launch_background.png';

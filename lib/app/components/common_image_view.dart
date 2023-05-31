@@ -28,7 +28,7 @@ class CommonImageView extends StatelessWidget {
     this.file,
     this.height,
     this.width,
-    this.fit = BoxFit.fill,
+    this.fit = BoxFit.cover,
     this.placeHolder = 'assets/images/image_not_found.png',
   }) : super(key: key);
 

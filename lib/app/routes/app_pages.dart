@@ -18,6 +18,8 @@ import '../modules/create_account/bindings/create_account_binding.dart';
 import '../modules/create_account/views/create_account_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/lister_navigation/bindings/lister_navigation_binding.dart';
+import '../modules/lister_navigation/views/lister_navigation_view.dart';
 import '../modules/make_payment/bindings/make_payment_binding.dart';
 import '../modules/make_payment/views/make_payment_view.dart';
 import '../modules/my_bookings/bindings/my_bookings_binding.dart';
@@ -186,6 +188,11 @@ class AppPages {
       name: _Paths.NOTIFICATION,
       page: () => const NotificationView(),
       binding: NotificationBinding(),
+    ),
+    GetPage(
+      name: _Paths.LISTER_NAVIGATION,
+      page: () => const ListerNavigationView(),
+      binding: ListerNavigationBinding(),
     ),
   ];
 }

@@ -2,6 +2,7 @@ import 'package:ev_station/app/services/index.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../controllers/home_controller.dart';
 
@@ -74,138 +75,136 @@ class HomeView extends GetView<HomeController> {
               // 10.kheightBox,
             ],
           ).paddingSymmetric(horizontal: 20.kw),
-          Expanded(
-            child: ListView(
-              padding: EdgeInsets.zero,
-              children: [
-                LocaleKeys.home_near_me.tr
-                    .text500(20.kh, color: Colors.black)
-                    .paddingSymmetric(horizontal: 20.kw),
-                SingleChildScrollView(
-                  padding: EdgeInsets.symmetric(vertical: 12.kh),
-                  scrollDirection: Axis.horizontal,
-                  child: Row(
-                    children: List.generate(3, (index) {
-                      return Row(
-                        mainAxisSize: MainAxisSize.min,
-                        children: [
-                          index == 0 ? 20.kwidthBox : Container(),
-                          DecoratedBox(
-                            decoration: BoxDecoration(
-                              boxShadow: [
-                                BoxShadow(
-                                    blurRadius: 10,
-                                    spreadRadius: 1,
-                                    color: const Color(0xff707070)
-                                        .withOpacity(0.1),
-                                    // color: Colors.black,
-                                    offset: const Offset(0, -2)),
-                              ],
-                            ),
-                            child: EvStationRoundedBox(
-                                width: 295.kw,
-                                color: const Color(0xffF6F6F6),
-                                child: Padding(
-                                  padding: EdgeInsets.symmetric(
-                                      horizontal: 14.kw, vertical: 12.kh),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.min,
-                                    crossAxisAlignment:
-                                        CrossAxisAlignment.start,
-                                    children: [
-                                      Row(
+          LocaleKeys.home_near_me.tr
+              .text500(20.kh, color: Colors.black)
+              .paddingSymmetric(horizontal: 20.kw),
+          SingleChildScrollView(
+            padding: EdgeInsets.symmetric(vertical: 12.kh),
+            scrollDirection: Axis.horizontal,
+            child: Row(
+              children: List.generate(3, (index) {
+                return Row(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    index == 0 ? 20.kwidthBox : Container(),
+                    DecoratedBox(
+                      decoration: BoxDecoration(
+                        boxShadow: [
+                          BoxShadow(
+                              blurRadius: 10,
+                              spreadRadius: 1,
+                              color: const Color(0xff707070).withOpacity(0.1),
+                              // color: Colors.black,
+                              offset: const Offset(0, -2)),
+                        ],
+                      ),
+                      child: EvStationRoundedBox(
+                          width: 295.kw,
+                          color: const Color(0xffF6F6F6),
+                          child: Padding(
+                            padding: EdgeInsets.symmetric(
+                                horizontal: 14.kw, vertical: 12.kh),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              crossAxisAlignment: CrossAxisAlignment.start,
+                              children: [
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: [
+                                    EvStationRoundedBox(
+                                        borderRadius: 4.kh,
+                                        child: CommonImageView(
+                                          height: 56.kh,
+                                          width: 56.kh,
+                                          imagePath: ImageConstant
+                                              .pngStationBackground,
+                                        )),
+                                    12.kwidthBox,
+                                    Expanded(
+                                      child: Column(
                                         mainAxisSize: MainAxisSize.min,
+                                        crossAxisAlignment:
+                                            CrossAxisAlignment.start,
                                         children: [
-                                          EvStationRoundedBox(
-                                              color: Colors.black12,
-                                              borderRadius: 4.kh,
-                                              child: SizedBox(
-                                                height: 56.kh,
-                                                width: 56.kh,
-                                              )),
-                                          12.kwidthBox,
-                                          Expanded(
-                                            child: Column(
-                                              mainAxisSize: MainAxisSize.min,
-                                              crossAxisAlignment:
-                                                  CrossAxisAlignment.start,
-                                              children: [
-                                                'Northampton Station'.text500(
-                                                    14.kh,
-                                                    color: Colors.black),
-                                                5.kheightBox,
-                                                '541, Centric Centre near 51 Avenue metro station'
-                                                    .text400(12.kh,
-                                                        color: Colors.black),
-                                              ],
-                                            ),
-                                          )
+                                          'Northampton Station'.text500(14.kh,
+                                              color: Colors.black),
+                                          5.kheightBox,
+                                          '541, Centric Centre near 51 Avenue metro station'
+                                              .text400(12.kh,
+                                                  color: Colors.black),
                                         ],
                                       ),
-                                      15.kheightBox,
-                                      Row(
-                                        mainAxisSize: MainAxisSize.min,
-                                        children: List.generate(
-                                            controller.data.length,
-                                            (index) => Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    Column(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      crossAxisAlignment:
-                                                          CrossAxisAlignment
-                                                              .start,
-                                                      children: [
-                                                        CommonImageView(
-                                                          height: 20.kh,
-                                                          width: 20.kh,
-                                                          svgPath: controller
-                                                                  .data[index]
-                                                              ['icon'],
-                                                        ),
-                                                        (controller.data[index]
-                                                                    ['label'] ??
-                                                                '')
-                                                            .text500(12.kh,
-                                                                color: ColorUtil
-                                                                    .mainDarkColor1)
-                                                      ],
-                                                    ),
-                                                    index != 2
-                                                        ? 40.kwidthBox
-                                                        : Container()
-                                                  ],
-                                                )),
-                                      )
-                                    ],
-                                  ),
-                                )),
-                          ),
-                          20.kwidthBox
-                        ],
-                      );
-                    }),
-                  ),
-                ),
-                Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    18.kheightBox,
-                    LocaleKeys.home_look_out_on.tr
-                        .text500(20.kh, color: Colors.black),
-                    16.kheightBox,
-                    EvStationRoundedBox(
-                        color: Colors.red.withOpacity(0.3),
-                        height: 274.kh,
-                        child: Container()),
-                    20.kheightBox
+                                    )
+                                  ],
+                                ),
+                                15.kheightBox,
+                                Row(
+                                  mainAxisSize: MainAxisSize.min,
+                                  children: List.generate(
+                                      controller.data.length,
+                                      (index) => Row(
+                                            mainAxisSize: MainAxisSize.min,
+                                            children: [
+                                              Column(
+                                                mainAxisSize: MainAxisSize.min,
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
+                                                children: [
+                                                  CommonImageView(
+                                                    height: 20.kh,
+                                                    width: 20.kh,
+                                                    svgPath: controller
+                                                        .data[index]['icon'],
+                                                  ),
+                                                  (controller.data[index]
+                                                              ['label'] ??
+                                                          '')
+                                                      .text500(12.kh,
+                                                          color: ColorUtil
+                                                              .mainDarkColor1)
+                                                ],
+                                              ),
+                                              index != 2
+                                                  ? 40.kwidthBox
+                                                  : Container()
+                                            ],
+                                          )),
+                                )
+                              ],
+                            ),
+                          )),
+                    ),
+                    20.kwidthBox
                   ],
-                ).paddingSymmetric(horizontal: 20.kw),
-              ],
+                );
+              }),
             ),
           ),
+          18.kheightBox,
+          LocaleKeys.home_look_out_on.tr
+              .text500(20.kh, color: Colors.black)
+              .paddingSymmetric(horizontal: 20.kw),
+          16.kheightBox,
+          Expanded(
+            child: EvStationRoundedBox(
+              height: 274.kh,
+              child: GetBuilder(builder: (HomeController controller) {
+                return GoogleMap(
+                  markers: Set<Marker>.of(controller.markers),
+                  zoomControlsEnabled: false,
+                  scrollGesturesEnabled: true,
+                  myLocationEnabled: true,
+                  myLocationButtonEnabled: false,
+                  mapType: MapType.normal,
+                  initialCameraPosition: controller.kGooglePlex,
+                  onMapCreated: (GoogleMapController gmap) async {
+                    controller.onMapCreate(gmap);
+                  },
+                );
+              }),
+            ).paddingSymmetric(horizontal: 20.kw),
+          ),
+          20.kheightBox
         ],
       )),
     );

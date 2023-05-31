@@ -49,7 +49,7 @@ class NotificationView extends GetView<NotificationController> {
                 LocaleKeys.notification_pause_all.tr.text500(14.kh),
                 Obx(
                   () => CupertinoSwitch(
-                    trackColor: Color(0xff6F6F6F),
+                    trackColor: const Color(0xff6F6F6F),
                     activeColor: ColorUtil.labelGreen,
                     value: controller.isSwitch.value,
                     onChanged: (value) => controller.isSwitch.value = value,
