@@ -269,5 +269,17 @@
   "notification": {
     "push_notification": "Push notification",
     "pause_all": "Pause All"
+  },
+
+  "lister_navigation": { "my_chargers": "My Chargers" },
+
+  "lister_home": {
+    "hello": "Hello, ",
+    "total_revenue": "Total Revenue",
+    "total_visitors": "Total Visitors",
+    "active_stations": "Active Stations",
+    "charging_capacity": "Charging Capacity: ",
+    "revenue_in_total": "Revenue in total",
+    "this_month": " (this month)"
   }
 }

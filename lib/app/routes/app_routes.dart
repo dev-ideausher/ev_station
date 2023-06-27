@@ -28,6 +28,9 @@ abstract class Routes {
   static const CARD_PAYMENT = _Paths.CARD_PAYMENT;
   static const NOTIFICATION = _Paths.NOTIFICATION;
   static const LISTER_NAVIGATION = _Paths.LISTER_NAVIGATION;
+  static const LISTER_HOME = _Paths.LISTER_HOME;
+  static const MY_CHARGERS = _Paths.MY_CHARGERS;
+  static const LISTER_PROFILE = _Paths.LISTER_PROFILE;
 }
 
 abstract class _Paths {
@@ -57,4 +60,7 @@ abstract class _Paths {
   static const CARD_PAYMENT = '/card-payment';
   static const NOTIFICATION = '/notification';
   static const LISTER_NAVIGATION = '/lister-navigation';
+  static const LISTER_HOME = '/lister-home';
+  static const MY_CHARGERS = '/my-chargers';
+  static const LISTER_PROFILE = '/lister-profile';
 }

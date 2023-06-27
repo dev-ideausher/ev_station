@@ -2,6 +2,7 @@ import 'package:ev_station/app/services/index.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../controllers/trip_controller.dart';
 
@@ -103,9 +104,20 @@ class TripView extends GetView<TripController> {
             () => Expanded(
               child: Stack(
                 children: [
-                  Container(
-                    color: Colors.red[100],
-                  ),
+                  GetBuilder(builder: (TripController controller) {
+                    return GoogleMap(
+                      markers: Set<Marker>.of(controller.markers),
+                      zoomControlsEnabled: false,
+                      scrollGesturesEnabled: true,
+                      myLocationEnabled: true,
+                      myLocationButtonEnabled: false,
+                      mapType: MapType.normal,
+                      initialCameraPosition: controller.kGooglePlex,
+                      onMapCreated: (GoogleMapController gmap) async {
+                        controller.onMapCreate(gmap);
+                      },
+                    );
+                  }),
                   controller.isSelecting.value
                       ? Container(
                           color: Colors.white,

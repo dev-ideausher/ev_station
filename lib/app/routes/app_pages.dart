@@ -18,12 +18,18 @@ import '../modules/create_account/bindings/create_account_binding.dart';
 import '../modules/create_account/views/create_account_view.dart';
 import '../modules/home/bindings/home_binding.dart';
 import '../modules/home/views/home_view.dart';
+import '../modules/lister_home/bindings/lister_home_binding.dart';
+import '../modules/lister_home/views/lister_home_view.dart';
 import '../modules/lister_navigation/bindings/lister_navigation_binding.dart';
 import '../modules/lister_navigation/views/lister_navigation_view.dart';
+import '../modules/lister_profile/bindings/lister_profile_binding.dart';
+import '../modules/lister_profile/views/lister_profile_view.dart';
 import '../modules/make_payment/bindings/make_payment_binding.dart';
 import '../modules/make_payment/views/make_payment_view.dart';
 import '../modules/my_bookings/bindings/my_bookings_binding.dart';
 import '../modules/my_bookings/views/my_bookings_view.dart';
+import '../modules/my_chargers/bindings/my_chargers_binding.dart';
+import '../modules/my_chargers/views/my_chargers_view.dart';
 import '../modules/my_subscription/bindings/my_subscription_binding.dart';
 import '../modules/my_subscription/views/my_subscription_view.dart';
 import '../modules/notification/bindings/notification_binding.dart';
@@ -57,15 +63,15 @@ part 'app_routes.dart';
 class AppPages {
   AppPages._();
 
-  // static const INITIAL = Routes.ADMIN_PANEL;
-  static String? INITIAL;
+  static const INITIAL = Routes.ADMIN_PANEL;
+  // static String? INITIAL;
 
   static assignInitial() {
-    if (Get.find<GetStorageService>().getIsLoggedIn) {
-      INITIAL = Routes.RENTER_NAVIGATION;
-    } else {
-      INITIAL = Routes.ONBOARDING;
-    }
+    // if (Get.find<GetStorageService>().getIsLoggedIn) {
+    //   INITIAL = Routes.RENTER_NAVIGATION;
+    // } else {
+    //   INITIAL = Routes.ONBOARDING;
+    // }
   }
 
   static final routes = [
@@ -193,6 +199,21 @@ class AppPages {
       name: _Paths.LISTER_NAVIGATION,
       page: () => const ListerNavigationView(),
       binding: ListerNavigationBinding(),
+    ),
+    GetPage(
+      name: _Paths.LISTER_HOME,
+      page: () => const ListerHomeView(),
+      binding: ListerHomeBinding(),
+    ),
+    GetPage(
+      name: _Paths.MY_CHARGERS,
+      page: () => const MyChargersView(),
+      binding: MyChargersBinding(),
+    ),
+    GetPage(
+      name: _Paths.LISTER_PROFILE,
+      page: () => const ListerProfileView(),
+      binding: ListerProfileBinding(),
     ),
   ];
 }

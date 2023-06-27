@@ -23,6 +23,7 @@ Future<void> main() async {
   );
   AppPages.assignInitial();
   return runApp(GetMaterialApp(
+    theme: ThemeData(scaffoldBackgroundColor: Colors.white),
     defaultTransition: Transition.noTransition,
     locale: const Locale('en', 'US'),
     smartManagement: SmartManagement.full,

@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 
 import '../../../../generated/locales.g.dart';
 import '../../../routes/app_pages.dart';
+import '../../../services/storage.dart';
 
 class CreateAccountController extends GetxController {
   RxBool isCheck = false.obs;
@@ -89,7 +90,19 @@ class CreateAccountController extends GetxController {
         body: {"name": nameController.text, "role": "user"}).then((value) {
       print(value.data);
       value.data['status']
-          ? Get.offAllNamed(Routes.RENTER_NAVIGATION)
+          ? {
+              Get.find<GetStorageService>().setuserId =
+                  value.data['user']['_id'],
+              Get.find<GetStorageService>().setName =
+                  value.data['user']['name'],
+              Get.find<GetStorageService>().setPhone =
+                  value.data['user']['phone'],
+              Get.find<GetStorageService>().setEmail =
+                  value.data['user']['email'],
+              Get.find<GetStorageService>().setProfileUrl =
+                  value.data['user']['image'],
+              Get.offAllNamed(Routes.RENTER_NAVIGATION)
+            }
           : showMySnackbar(msg: LocaleKeys.common_something_went_wrong.tr);
     });
   }

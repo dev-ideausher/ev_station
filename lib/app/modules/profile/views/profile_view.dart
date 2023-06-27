@@ -34,13 +34,19 @@ class ProfileView extends GetView<ProfileController> {
                   return Column(
                     children: [
                       EvStationRoundedBox(
+                          color: Colors.grey,
                           height: 115.kh,
                           width: 115.kh,
                           borderRadius: 100,
-                          child: CommonImageView(
-                            fit: BoxFit.cover,
-                            url: Get.find<GetStorageService>().getProfileUrl,
-                          )),
+                          child: Get.find<GetStorageService>()
+                                  .getProfileUrl
+                                  .isEmpty
+                              ? Container()
+                              : CommonImageView(
+                                  fit: BoxFit.cover,
+                                  url: Get.find<GetStorageService>()
+                                      .getProfileUrl,
+                                )),
                       16.kheightBox,
                       Get.find<GetStorageService>().getName.text600(18.kh),
                     ],

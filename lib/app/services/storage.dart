@@ -15,11 +15,11 @@ class GetStorageService extends GetxService {
 
   set setuserId(String val) => _runData.write('userId', val);
 
-  String get getName => _runData.read('name');
+  String get getName => _runData.read('name') ?? '';
 
   set setName(String val) => _runData.write('name', val);
 
-  String get getProfileUrl => _runData.read('profileUrl');
+  String get getProfileUrl => _runData.read('profileUrl') ?? '';
 
   set setProfileUrl(String val) => _runData.write('profileUrl', val);
 

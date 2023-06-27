@@ -1,6 +1,10 @@
+import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
 class ListerNavigationController extends GetxController {
+  PageController pageViewController = PageController();
+  RxInt pageNo = 0.obs;
+
   @override
   void onInit() {
     super.onInit();
@@ -14,5 +18,10 @@ class ListerNavigationController extends GetxController {
   @override
   void onClose() {
     super.onClose();
+  }
+
+  onIconTap(int value) {
+    pageNo.value = value;
+    pageViewController.jumpToPage(pageNo.value);
   }
 }

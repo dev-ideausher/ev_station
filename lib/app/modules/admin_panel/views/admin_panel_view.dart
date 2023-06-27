@@ -37,6 +37,10 @@ class AdminPanelView extends GetView<AdminPanelController> {
                   onPressed: () => Get.toNamed(Routes.RENTER_NAVIGATION),
                 ),
                 AdminPanelButton(
+                  label: 'Lister Navigation',
+                  onPressed: () => Get.toNamed(Routes.LISTER_NAVIGATION),
+                ),
+                AdminPanelButton(
                   label: 'Station Detail',
                   onPressed: () => Get.toNamed(Routes.STATION_DETAIL),
                 ),

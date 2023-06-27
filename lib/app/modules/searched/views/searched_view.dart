@@ -1,7 +1,7 @@
-import 'package:ev_station/app/components/ev_station_rounded_box.dart';
 import 'package:flutter/material.dart';
 
 import 'package:get/get.dart';
+import 'package:google_maps_flutter/google_maps_flutter.dart';
 
 import '../../../services/index.dart';
 import '../controllers/searched_controller.dart';
@@ -16,9 +16,20 @@ class SearchedView extends GetView<SearchedController> {
           resizeToAvoidBottomInset: false,
           body: Stack(
             children: [
-              Container(
-                color: Colors.red[100],
-              ),
+              GetBuilder(builder: (SearchedController controller) {
+                return GoogleMap(
+                  markers: Set<Marker>.of(controller.markers),
+                  zoomControlsEnabled: false,
+                  scrollGesturesEnabled: true,
+                  myLocationEnabled: true,
+                  myLocationButtonEnabled: false,
+                  mapType: MapType.normal,
+                  initialCameraPosition: controller.kGooglePlex,
+                  onMapCreated: (GoogleMapController gmap) async {
+                    controller.onMapCreate(gmap);
+                  },
+                );
+              }),
               Padding(
                 padding: 20.paddingAll,
                 child: Column(
@@ -73,11 +84,12 @@ class SearchedView extends GetView<SearchedController> {
                                   mainAxisSize: MainAxisSize.min,
                                   children: [
                                     EvStationRoundedBox(
-                                        color: Colors.black12,
+                                        height: 78.kh,
+                                        width: 82.kw,
                                         borderRadius: 4.kh,
-                                        child: SizedBox(
-                                          height: 78.kh,
-                                          width: 82.kw,
+                                        child: CommonImageView(
+                                          imagePath: ImageConstant
+                                              .pngStationBackground,
                                         )),
                                     16.kwidthBox,
                                     Expanded(

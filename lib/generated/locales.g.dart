@@ -254,6 +254,14 @@ class LocaleKeys {
   static const notification_push_notification =
       'notification_push_notification';
   static const notification_pause_all = 'notification_pause_all';
+  static const lister_navigation_my_chargers = 'lister_navigation_my_chargers';
+  static const lister_home_hello = 'lister_home_hello';
+  static const lister_home_total_revenue = 'lister_home_total_revenue';
+  static const lister_home_total_visitors = 'lister_home_total_visitors';
+  static const lister_home_active_stations = 'lister_home_active_stations';
+  static const lister_home_charging_capacity = 'lister_home_charging_capacity';
+  static const lister_home_revenue_in_total = 'lister_home_revenue_in_total';
+  static const lister_home_this_month = 'lister_home_this_month';
 }
 
 class Locales {
@@ -484,5 +492,13 @@ class Locales {
     'card_payment_add_card': 'Add card',
     'notification_push_notification': 'Push notification',
     'notification_pause_all': 'Pause All',
+    'lister_navigation_my_chargers': 'My Chargers',
+    'lister_home_hello': 'Hello, ',
+    'lister_home_total_revenue': 'Total Revenue',
+    'lister_home_total_visitors': 'Total Visitors',
+    'lister_home_active_stations': 'Active Stations',
+    'lister_home_charging_capacity': 'Charging Capacity: ',
+    'lister_home_revenue_in_total': 'Revenue in total',
+    'lister_home_this_month': ' (this month)',
   };
 }
